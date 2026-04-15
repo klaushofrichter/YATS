@@ -1,0 +1,290 @@
+:root {
+  --bg: #1a1a2e;
+  --bg-card: #16213e;
+  --bg-card-hover: #1a2744;
+  --text: #e0e0e0;
+  --text-muted: #8892a4;
+  --accent: #0f9b58;
+  --accent-hover: #0db865;
+  --danger: #e74c3c;
+  --danger-hover: #c0392b;
+  --border: #2a3a5c;
+  --input-bg: #0f3460;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+header span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tabs button {
+  padding: 0.5rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.tabs button:hover {
+  background: var(--bg-card-hover);
+  color: var(--text);
+}
+
+.tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td {
+  font-size: 0.9rem;
+}
+
+.btn {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: var(--danger-hover);
+}
+
+.btn-small {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.upload-area {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.upload-area:hover {
+  border-color: var(--accent);
+}
+
+.upload-area input {
+  display: none;
+}
+
+.upload-area p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.screen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.screen-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.screen-card img {
+  width: 100%;
+  aspect-ratio: 800 / 480;
+  object-fit: contain;
+  background: white;
+}
+
+.screen-card .info {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.screen-card .info .name {
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+
+.screen-card .info .date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.device-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2rem;
+  font-size: 0.9rem;
+}
+
+.device-detail dt {
+  color: var(--text-muted);
+}
+
+.device-detail dd {
+  font-weight: 500;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-online {
+  background: rgba(15, 155, 88, 0.2);
+  color: #0f9b58;
+}
+
+.badge-offline {
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+.empty-state p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.log-entry {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.log-entry .timestamp {
+  color: var(--text-muted);
+  margin-right: 0.5rem;
+}
+
+input[type="text"],
+input[type="number"] {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+}
